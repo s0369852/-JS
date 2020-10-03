@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. HTML과 JS의 만남: script 태그</title>
+
+    <!--
+        기본적으로 JS는 HTML위에서 동작하는 언어.
+        script라는 태그로 JS를 불러온다.
+        웹브라우저는 script안 쪽에 있는 코드를 JS로 해석한다.
+    -->
+
+</head>
+<body>
+
+    <h1>JavaScript</h1>
+    
+    <script>
+        // document.write('hello world');
+        document.write(1+1);
+    </script>
+
+    <!-- 
+        결과는 같은데 어떤 부분에서 차이가 생기느냐??
+        JS는 굉장히 동적.
+        문자가 아닌 숫자를 집어넣었을 때 JS는 직접 계산을 한다.
+        html은 정적.
+
+        중요한 것은
+        document.write(1+1); => 이게 JS코드라는 것
+        웹페이지에 어떤 글씨를 출력할 때는,
+        document.write을 쓴다는 것.
+        이것이 JS코드 라는 것을 알려주기 위해서는
+        script태그로 감싼다.
+    -->
+
+    <h1>html</h1>
+    <!-- hello world -->
+    1+1
+
+</body>
+</html>

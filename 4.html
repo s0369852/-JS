@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. HTML과 JS의 만남: 이벤트</title>
+
+    <!--
+        이벤트 = JS가 사용자와 상호작용하는데 핵심적인 역할을 한다.
+
+    -->
+
+</head>
+<body>
+
+    <input type="button" value="Hi" onclick="
+    alert('hi')">
+
+    <!-- 
+        hi 버튼을 클릭했을 때 경고창이 뜨게 한다.
+
+        "onclick"
+        1. onclick이라는 속성 값으로는 반드시 JS가 와야한다. 
+        2. onclick이라는 속성의 속성값은 웹브라우저가 기억하고 있다가, 
+           onclick속성이 위치하고 있는 태그에 사용자가 클릭했을 때, 
+           기억하고 있었던 JS코드를 JS의 문법에 따라서 해석해서 거기에 적혀있는대로, 
+           웹브라우저가 동작을 한다. 
+
+        이렇게 웹브라우저 위에서 일어나는 일들을 사건이라고 한다. 
+        => 이벤트
+
+        어떤 이벤트가 일어났을 때, 어떠한 자바스크립트가 샐행되도록 하는 것이 위에 있는
+        onclick같은 것들. 
+
+        웹 브라우저에서 일어날 수 있는 이벤트 들은 어떤 것들이 있을까?
+        무한히 많은 이벤트들이 있지만, 자주 사용되는 이벤트들이 있다.
+    -->
+
+    <input type="text" onchange="alert('changed')">
+
+    <!-- 
+        "onchange" => 글상자안에 글씨를 쓰고, 커서를 글상자 밖으로 이동하게 되면,
+        웹브라우저가 onchange이벤트를 실행시키게 된다. 
+        이때 글상자에 글을 쓰고 다시 지운다음에 빠져나오게 되면 
+        다시 onchange이벤트를 실행하진 않는다.
+
+        어떤 키를 눌렀을 때 이벤트가 발생하게 하고 싶다.
+        => javascript keydown event attribute
+    -->
+
+    <input type="text" onkeydown="alert('key down!')">
+    <!--  
+        "onkeydown" => 글상자에 키보드를 누르면 키를 눌렀다는 경고창이 뜬다.
+    -->
+
+    <!-- 
+        onclick, onchange, onkeydown 등
+        => 웹브라우저는 웹브라우저 위의 일어나는 여러가지 사건 들 중에,
+        기념할 만한 몇가지 약 10개에서 20개 정도 되는 이벤트들을 정의하고 있다.
+        이벤트를 이용해서 사용자와 상호작용하는 웹 페이지를 만들 수 있다.  
+    -->
+
+</body>
+</html>
