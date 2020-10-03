@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. css 기초: 선택자</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <style>
+        .js {
+            font-weight: bold;
+            color: red;
+        }
+
+        #first {
+            color: green;
+        }
+
+        span {
+            color: blue;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!--  
+        css를 이용해서 웹 페이지에 있는 여러 요소들을 제어하려고 할때 선택자를 잘 사용해야 한다.
+        주고 싶은 효과를 효율적으로 줄 수 있다. 
+
+        class = 무언가를 그룹핑 한다는 뜻. (포괄적 개념)
+        id = 어떤 한가지 대상을 식별한다는 뜻. (정확한 타겟팅)
+
+        그룹핑 하고 싶은 것들을 같은 class로 지정을 해준다. (동일 class가 존재.)
+        id는 한번 등장하면 더 이상 같은 id를 사용할 수 없다. (동일 id는 있을 수 없다.)
+
+        광범위한 효과처리는 class, 그 중에서 예외적으로 처리 하고 싶을 때 id
+        
+        우선순위는 id > class > 태그명
+    -->
+
+    <h1><a href="#">WEB</a></h1>
+    <h2 style="background-color: coral; color: powderblue; ">JavaScript</h2>
+    <p>
+        <span id="first" class="js">JavaScript</span> Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make <span>HTML</span> and <span>CSS</span>, <span class="js">JavaScript</span> a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the <span class="js">JavaScript</span> 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more <span class="js">JavaScript</span> recently with desktop publishing software like Aldus PageMaker including <span class="js">JavaScript</span> versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. 제어할 태그 선택하기</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!--  
+        click에 대한 이벤트가 필요하다. => onclick
+        onclick="JS코드"
+        버튼을 클릭했을 때 body태그에 style 속성을 동적으로 넣을려고 한다. 
+        
+        1. JS의 문법에 따라서 웹 브라우저에게 body태그를 선택하도록 해야 한다.
+            => javascript select tag by css selector 
+                css선택자 = id, class, 태그
+        2. document.querySelector(".myclass");
+            => .myclass : 이 웹 페이지에 있는 모든 태그 중에 class명이 myclass로 되어 있는 것을 선택한다.
+            => query : 질의한다. 웹 브라우저에게
+            => selector : CSS 선택자 
+        3. 선택을 했으니, 선택된 태그에 style이라는 속성을 어떻게 JS로 넣을 수 있을까?
+            => javascript element style 
+            => document.querySelector(".myclass").style.backgroundColor='black';
+
+        JS할 수 있는 가장 중요한 일
+        사용자와 상호작용해서 HTML, CSS를 프로그래밍적으로(동적) 변경해서 보다 똑똑하게 작동할 수 있다. 
+    -->
+
+    <h1><a href="#">WEB</a></h1>
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';">
+
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>

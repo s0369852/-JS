@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. 웹 브라우저 제어</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!--  
+        웹 브라우저를 제어하는 방법.
+
+        <body style="background-color: black; color: white;">
+        body의 직접적으로 스타일을 줘서 바꾸는 것이 아니라,
+        night버튼을 눌렀을 때 바뀌게 하고 싶다면?
+
+        html은 한 번 화면에 표시가 되면, 자신을 바꿀 수 있는 능력이 없다. (정적.)
+        JS를 사용하면 버튼을 클릭했을때,
+        body태그의 속성값이 변하는 것을 눈으로 확인 할 수 있다. 
+
+        JS를 사용하려면 디자인을 할 수 있는 CSS의 속성에 대해서 알아야하고, 
+        디자인을 주고자 하는 태그가 누구인가를 웹브라우저에게 알려주는 방법을 JS문법으로 어떻게 하는지를 알아야 한다. 
+
+        1. CSS의 본질적인 문법
+        2. JS를 이용해서 제어하고자 하는 태그를 선택 하는 방법.
+        
+    -->
+
+    <h1><a href="#">WEB</a></h1>
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';">
+
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>
