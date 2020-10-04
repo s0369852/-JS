@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14. 조건문 예고</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!--  
+        조건문(중요)
+        하나의 프로그램이 하나의 흐름으로 가는 것이 아니라, 조건에 따라서 다른 순서의 기능들이 실행되도록 하는 것이다. 
+        프로그래밍이라는 것이 가장 중요하고, 프로그래밍이라는 것을 통해서 반복적인 일을 하지 않도록 되었다면,
+        조건문이라는 것은 단순한 반복문이 아니라, 아주 복잡한 업무까지도 할 수 있는 혁명적인 도구이다. 
+
+        토글(toggle)
+        => ex). night상태에서 버튼을 클릭하면 day상태가 되고 day상태에서 버튼을 클릭하면 night상태가 되는 기능을 구현.
+
+    -->
+
+    <h1><a href="#">WEB</a></h1>
+    <input type="button" value="night" onclick="
+    document.querySelector('body').style.backgroundColor='black';
+    document.querySelector('body').style.color='white';">
+
+    <input type="button" value="day" onclick="
+    document.querySelector('body').style.backgroundColor='white';
+    document.querySelector('body').style.color='black';">
+
+    <input type="button" value="black" onclick="
+        if(document.querySelector('body').dataset.mode === 'day'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('body').dataset.mode = 'night';
+            this.value = 'day';
+        } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('body').dataset.mode = 'day'
+            this.value = 'night';
+        }
+    ">
+
+    <!-- 
+        if라는 조건문에 따라서 현재 day모드라고 한다면,
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('body').dataset.mode = 'night';
+            this.value = 'day';
+            이 코드가 실행이 되고, 
+        아니라면 else라는 또 다른 조건으로,
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('body').dataset.mode = 'day'
+            this.value = 'night';
+            이 코드가 실행이 된다. 
+
+        "===" : 비교 연산자
+        => 비교 연산자라는 것을 통해서 만들어지는 결과는 blooean(불리언).
+    
+    -->
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>

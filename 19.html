@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>19. 반복문 예고</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <h1><a href="#">WEB</a></h1>
+
+    <input id="night_day" type="button" value="night" onclick="
+        if(document.querySelector('#night_day').value === 'night'){
+            document.querySelector('body').style.backgroundColor = 'black';
+            document.querySelector('body').style.color = 'white';
+            document.querySelector('#night_day').value = 'day'
+        } else {
+            document.querySelector('body').style.backgroundColor = 'white';
+            document.querySelector('body').style.color = 'black';
+            document.querySelector('#night_day').value = 'night'
+        }
+    ">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day'
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night'
+    }
+    ">
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day'
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night'
+    }
+    ">
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day'
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night'
+    }
+    ">
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day';
+        
+        var links = document.querySelectorAll('a');
+        var i = 0;
+        while(i < links.length){
+            links[i].style.color = 'powderblue';
+            i=i+1;
+        }
+
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night';
+
+        var links = document.querySelectorAll('a');
+        var i = 0;
+        while(i < links.length){
+            links[i].style.color='blue';
+            i=i+1;
+        }
+    }
+    ">
+
+    <!--  
+        JS의 새로운 문법. 
+
+        night버튼을 클릭하면 어두운 배경에 link에 표시되는 색이 너무 어둡다.
+        밝은 배경으로 돌아왔을때의 link에 표시되는 색은 너무 선명하다. 
+        => 버튼을 누를때 마다 어두운 경우에는 좀 더 밝게, 밝은 경우에는 조금 어둡게 바꾸고 싶다. 
+        
+        버튼을 클릭했을때 웹페이지에 있는 모든 link를 style속성값을 바꿔주는 코딩을 하면 되겠지만,
+        만약 link가 1억개라면? 1억번의 반복적인 작업을 해야 할지도 모른다.
+        그렇게되면 코드의 양도 늘어나고, 유지보수하는데도 힘들다. 
+        => 이때 사용되는 것이 "반복문".
+        
+        var links = document.querySelectorAll('a');
+        var i = 0;
+        while(i < links.length){
+            links[i].style.color = 'powderblue';
+            i=i+1;
+        }
+        
+        => night 버튼을 클릭하면, a태그 style속성이 추가되면서 powderblue라고 하는 color가 적용이 되고
+
+        var links = document.querySelectorAll('a');
+        var i = 0;
+        while(i < links.length){
+            links[i].style.color='blue';
+            i=i+1;
+        }
+        
+        => 다시 day 버튼을 클릭하면, a태그 style속성이 blue로 color가 적용이 된다. 
+
+        위의 두 코드의 대략적인 내용은
+        querySelectorAll('a') : 웹페이지에 있는 모든 a태그를 가져온 다음에,
+        while(i < links.length){
+            links[i].style.color = 'powderblue';
+            i=i+1;
+        }
+        a태그 하나 하나에 대해서 반복적으로 color를 지정한다라는 내용이 들어 있는 코드다. 
+
+        위의 코드를 이해하기 위한 재료.
+        1. 배열
+        2. 배열을 이용해서 반복적인 작업을 처리할 수 있는 반복문
+        
+    -->
+
+</body>
+</html>

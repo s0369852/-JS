@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>22. 배열과 반복문</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!--  
+        1. 배열
+        2. 배열을 이용해서 반복적인 작업을 처리할 수 있는 반복문
+        
+        배열과 반복문을 합성해서 각각의 기능들이 서로 결합하여 시너지 효과를 만들어 냄. 
+    -->
+
+    <h1>Loop & Array</h1>
+    <h2>Family(li태그 사용)</h2>
+    <ul>
+        
+        <li>byju</li>
+        <li>giuk</li>
+        <li>mom</li>
+        <li>papa</li> 
+        <li>uncle</li> 
+        
+        <!--  
+            여기에 있는 li태그가 아주 복잡하고, 수정이 빈번하게 일어난다면? 
+            li태그로 글 목록을 작성하는 것이 보통 어려운 일이 아닐 것이다.
+            => 서로 연관된 데이터들을 JS에서 담는 방법이 바로 배열(Array).
+            
+            배열(Array)에 담겨있는 데이터를 순차적으로 꺼내서 li라는 태그로 만들어 주는 역할은 누가 할 수 있는가?
+            => 반복문.
+        -->
+    </ul>
+
+    <script>
+        // var family = ['byju', 'giuk', 'mom', 'papa','uncle'];
+        // var family = ['byju', 'giuk', 'mom'];
+        var family = ['byju', 'giuk', 'mom', 'papa','uncle', 'grandpa', 'grandma'];
+        // 각각의 항목들은 원소(Element)라고 불린다. 
+    </script>
+
+    <h2>family(JS사용)</h2>
+    <ul>
+        <script>
+            var i = 0;
+            // while(i < 4)
+            // while(i < 5)
+            while(i < family.length){
+                // document.write('<li>'+family[i]+'</li>');
+                document.write('<li><a href="http://a.com/'+family[i]+'">'+family[i]+'</a></li>');
+                i = i + 1;
+            }
+            // li의 항목이 4개가 나온다. (0,1,2,3) => 의도에 따라 잘 동작했다.
+            // 이제 family라는 변수 안에 있는 배열에서 반복문이 실행될 때 마다, 하나 하나의 원소값을 가져와서 위치시키면 된다. 
+            // i라는 변수를 사용하고 있고, 그 변수는 0부터 시작해서 3까지 1씩 증가한다. 
+            // => 'byju'는 0번째 index, 'giuk'는 1번째, 'mom'은 2번째, 'papa'는 3번째.
+            // 변수 i의 값이 배열(Array)에 있는 index값과 일치하는 것을 볼 수 있다.
+            // document.write('<li></li>') -> document.write('<li>'+family[i]+'</li>');
+            // '<li>''</li>'태그 사이에 +변수+를 넣어준다.
+            // 변수 i의 값과 index의 값이 일치한다는 특성을 활용한다.
+            // +famili[i]+
+            
+            // 아직 완벽하지 않은 것이, 만약 배열에 원소(Element)를 추가한다면, 그 추가한 요소까지 나오는가?
+            // => 아니다. 
+            // 배열의 원소들이 다 나오게 하려면 아래와 같이 고쳐줘야 한다.  
+            // while(i < 4) -> while(i < 5)
+            
+            // 여기서 다시, 만약 배열의 원소가 줄어든다면? 
+            // => var family = ['byju', 'giuk', 'mom'];
+            // * byju
+            // * giuk
+            // * mom
+            // * undefined
+            // * undefined
+            // 5개가 그대로 나오지만 3개만이 정해진 원소로 나오고 나머지 2개는 "undefined"로 나오게 된다.
+
+            // 데이터가 바뀌었다고 로직을 바꾼다?
+            // => 굉장히 창피스럽게 생각한다. 
+            // 데이터가 바뀌면 바뀐 데이터에 따라서 유연하게 바뀌는 것을 원한다. 
+            // => while(i < 5) -> while(i < family.length)
+            // => '5'라는 지정된 숫자가 아니라 변수 family라는 배열의 담겨있는 원소의 숫자가 올 수 있다면, 직접 수를 입력하지 않고도 탄력적으로 변할 수 있다.
+            // 이렇게 되면 만약 변수 famliy의 원소의 숫자가 늘어나든 줄어들든 상관없이 원소의 숫자대로 나타난다.
+            
+            // var i = 0;
+            // while(i < family.length){
+            //     document.write('<li>'+family[i]+'</li>');
+            //     i = i + 1;
+            // }
+            // => 이렇게 되면 더 이상 이 코드에는 신경쓸 필요가 없다.
+            // => var family = ['byju', 'giuk', 'mom', 'papa','uncle', 'grandpa', 'grandma']; -> 이 데이터 자체에만 집중을 할 수가 있다.
+
+            // 원소에 link를 넣고 싶다면, 전부다 바꿔써야 할까?
+            // ('<li>'+family[i]+'</li>') -> ('<li><a href="http://a.com/'+family[i]+'">'+family[i]+'</a></li>')
+            // => "http://a.com/'+family[i]+'"
+            // * http://a.com/byju
+            // * http://a.com/giuk
+            // * http://a.com/mom
+            // * http://a.com/papa
+            // * http://a.com/uncle
+            // * http://a.com/grandpa
+            // * http://a.com/grandma
+            // => link의 값도 원소의 순서대로 나온다. 
+        </script>
+    </ul>
+
+    <!--  
+        배열이라는 것은 순서대로 서로 연관된 데이터를 잘 정리정돈 하는 것이고,
+        반복문은 순서대로 그 배열에 담겨있는 데이터를 하나씩 꺼내서 자동화된 처리를 할 수 있는 문법.
+        이 두개의 기능은 아주 서로 환상의 콤비 같은 기능이다. 
+    -->
+
+</body>
+</html>

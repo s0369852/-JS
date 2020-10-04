@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. 조건문</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!-- 
+        "===" : 비교 연산자
+        => 비교 연산자라는 것을 통해서 만들어지는 결과는 Boolean(불리언)이라는 데이터 타입.
+            비교 연산자이면서 동시에 이항 연산자. 
+            좌항과 우항이 있고, 좌항과 우항을 결합에서 어떠한 데이터를 만든다. 
+            좌항과 우항을 비교해서 같다면 이것 자체가 true라는 값이 된다. 
+            좌항과 우항을 비교해서 다른데 같다고 하고 있으면 false라는 값이 된다. 
+            좌항과 우항의 관계에 따라서 true 또는 false, 둘 중에 하나의 값을 만들어 내는 연산자다. 
+
+            true와 false라는 값을 묶어서 뭐라고 하냐면 "Boolean(불리언)"이라고 한다.
+            boolean으로 인해서 단순 반복에서 해방이 될 수 있었다. 
+            boolean은 영국의 수학자인 조지 불이라는 사람의 업적을 기리기 위해서 붙여졌다. (수학의 논리학)
+
+            
+        데이터 타입에는
+        1. number : 무한히 많은 데이터. (컴퓨터라는 기계의 한계로 인해서 실제로 무한히 많지는 않지만)
+        2. string : 엄청나게 많은 문자열
+        3. boolean : true, false -> 단, 2개로 이루어져 있는 데이터 타입. 
+        4. null
+        5. undefined
+        6. symbol
+        그리고 object
+
+        비교 연산자, 불리언, 조건문 => 이 3가지는 아주 깊은 관련성이 있다. 
+
+    -->
+
+    <h1>Conditional statements</h1>
+    <h2>Program</h2>    
+    <script>
+        document.write("1<br>");
+        document.write("2<br>");
+        document.write("3<br>");
+        document.write("4<br>");
+    </script>
+
+    <h2>IF - true</h2>
+    <script>
+        document.write("1<br>");
+        if(true){
+            document.write("2<br>");
+        } else {
+            document.write("3<br>");
+        }
+        document.write("4<br>");
+    
+    // 순서대로 실행이 되는데, 1이 실행이 되고, 2가 실행된 다음에 3은 안나오고 4가 나왔다.
+    // 즉, 실행의 순서가 바뀌었다. 3을 무시하는 방향으로. 
+
+    </script>
+
+    <h2>IF - false</h2>
+    <script>
+        document.write("1<br>");
+        if(false){
+            document.write("2<br>");
+        } else {
+            document.write("3<br>");
+        }
+        document.write("4<br>");
+    
+    // 순서대로 실행이 되는데, 1이 실행이 되고, 2가 false니까 else 안에 있는 3이 나오고 4가 나왔다.
+    // 즉, if문에 뒤에 따라오는 ()안에는 boolean 데이터 타입이 온다. => true나 false값이 와야 한다.
+    // true면, 첫번째 {}안에 있는 코드들이 실행이 되고 두번째 else{} 안에 있는 코드는 무시된다.
+    // false면, 첫번째 {}안에 있는 코드들이 무시되고, 두번째 else{} 안에 있는 코드가 실행된다.
+
+    // 이것이 조건문을 이해하는데 가장 중요한 요소이다 .
+    // 즉 boolean의 값이 무엇이냐에 따라서, 실행되는 코드가 바뀐다. 
+
+    // 지금은 boolean값을 true, false로 직접 코딩을 해넣었기 때문에 true인 값은 언제나 true, false인 값은 언제나 false가 되는 것이다. -> 완전히 쓸모없는 코드. = 왜냐하면, 조건에 따라서 실행되는 코드가 달라지지 않기 때문이다. 
+
+    // if뒤에 오는 ()안에 boolean값이 true나 false로 들어오는데, 조건에 따라서 true가 오고, 조건에 따라서 false가 오도록 하면 되는 것.
+    
+    
+
+    </script>
+
+</body>
+</html>
