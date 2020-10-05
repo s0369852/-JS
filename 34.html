@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>34. 파일로 쪼개서 정리 정돈하기</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <!--  
+        가장 큰 정리정돈의 도구.
+        서로 연관된 코드들을 파일로 묶어서 그룹핑하는 것.
+        이 것을 사용하면 우리가 웹페이지가 아무리 많아도 그 웹페이지들을 감당할 수 있게 된다. 
+
+        갖고 있는 웹페이지가 1억개라면?
+        코드들을 페이지 마다 복사해서 붙여넣는데에는 한계가 있다. 
+        만약 link의 색을 powderblue에서 yellow로 바꾸고 싶다면 
+        웹페이지 마다 일일이 다찾아서 변경을 할 것인가? 
+        => 현실적으로 어렵다. 
+
+        방법은 바로 파일로 쪼개는 것이다. -> color.js 
+        모든 웹페이지의 공통적으로 들어가는 코드를 script태그를 제외하고 복사한 다음에, 
+        color.js에 붙여넣기 해준다. 
+        그런 다음 script태그의 공통된 코드들을 지워주고,
+        <script src="js/color.js"></script>를 입력해준다. 
+
+        night버튼을 눌렀을 때 글자색이 yellow로 변경이 되었다. 
+        (color.js에서 색상을 바꿨기 때문.)
+
+        아까와 똑같이 작동을 하지만 내부적으로 완전히 달라졌다. 
+        파일로 쪼개진 상태이다. 
+    
+        웹페이지에서 검사를 누른뒤 network를 확인해 보면, 이 웹페이지를 화면에 표시하기 위해서 로딩된 파일들이 보이는데, 보이는 것 처럼 color.js를 조용히 웹브라우저가 다운로드 해서, <script src="js/color.js"></script> 이 코드에 원래 있었던 것처럼 갖다 놓고 해석하게 된다. 
+        
+        파일로 쪼갰을 때에의 장점은 새로운 파일들을 만들었을때, 모든 코드를 복사할 필요가 없이, 공통된 파일을
+        새로운 웹페이지에 포함을 시키면 된다. 
+        => 작성했던 코드를 재사용 할 수 있다. 
+        => 공통된 파일을 수정하면 공통된 파일을 사용하는 모든 웹페이지에 동시에 변화가 반영된다. 
+        => 유지보수가 매우 편리해졌다. 
+        => 서로 다른 웹페이지에 공통된 파일이 include(포함)되어 있다면 파일이 위치하고 있는 로직은 서로 완전히 같은 것이라는 것을 알 수있고, 가독성이 좋아지고, 코드가 훨씬 더 명확해지고, 코드의 의미가 파일의 이름을 통해서 확인을 할 수가 있다. 
+
+        좋은점 하나 더. 
+        웹페이지에 로드할 때, 웹서버에 접속을 몇번해야 하냐면, 해당 페이지와, 파일로 쪼갠 color.js 총 2번을 해야한다. 
+        쪼개진 파일을 다운을 받아야 하기 때문. 
+        이건 웹서버 입장에서는 좋은일이 아니다. 접속은 적을 수록 좋기 때문. 
+        그럼에도 불구하고 이렇게 하는 것이 훨씬 더 효율적이다. 
+        => 캐시때문. 
+            캐시는 저장한다라는 뜻이 캐시(cache)
+            한번 웹페이지에 다운로드 된, 웹브라우저에 다운로드 된 이런 파일은 웹브라우저가 보통 우리 컴퓨터에 저장을 시켜놓는다. 
+            그리고 다음에 접속할때 저장된 파일을 읽어서 네트워크를 통하지 않게 한다. 
+            그럼 서버입장에서는 훨씬 더 비용을 절감할 수 있고, 사용자 입장에서도 네트워크 트래픽도 절감할 수 있고, 훨씬 더 빠르게 웹페이지를 화면에 표시할 수 있다라고 하는 효과가 생기기 때문에, 
+            파일로 쪼개는 것이 실제로 훨씬 더 효율적이고 돈도 적게 들고 시간도 적게 드는 방법이다. 
+    -->
+
+    <script src="js/color.js"></script>
+
+</head>
+<body>
+
+    <h1><a href="#">WEB</a></h1>
+    
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31. 객체와 반복문</title>
+
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+
+    <h1>Object</h1>
+    
+    <h2>Create</h2>
+    <script>
+        var family = {
+            "me":"byju",
+            "brother":"kiuk",
+        };
+        document.write('me : '+family.me+'<br>');
+        document.write('brother : '+family.brother+'<br>');
+        family.mother = "mom";
+        document.write('mother : '+family.mother+'<br>');
+        family["maternal grandfather"] = "grandpapa";
+        document.write("maternal grandfather : "+family["maternal grandfather"]+"<br>");
+    </script>
+    
+    <!-- 객체의 데이터를 순회하는 방법. -->
+    <h2>Iterate</h2>
+    <script>
+        for(var key in family){
+            document.write(key+' : '+family[key]+'<br>');
+        }
+    </script>
+    <!--  
+        생성된 객체에 어떤 데이터가 있는지, 모조리 다 가져와야 하는 경우에 사용하는 것.
+        => 반복문 
+
+        배열에서 반복문으로 데이터를 다 가져왔었는데, 객체에서는 어떻게 할까? 
+        => javascript object iterate(순회한다, 반복적으로 가져온다.)
+        => for...in
+
+        family라는 모든 객체를 꺼내서 화면에 출력한다. 
+        =>
+        for(var key in family){
+
+        };
+        => for라고 쓰면 family라고 하는 변수가 가르키는 객체에 있는(in) key값들을 가져오는 반복문이다.
+            여기서 key값이라는 것은 "me", "brother", "mother", "maternal grandfather"이다.  
+            즉, key값이라고 하는 것은 우리가 "가져오고 싶은 정보"("byju", "kiuk", "mom", "grand papa")에 도달할 수 있는 열쇠가 바로 "me", "brother", "mother", "maternal grandfather" 이것들. Key라고 부른다. 
+
+        (배열에서는 key라는 표현을 쓰지 않고, 순서대로 정리정돈이 되어있기 때문에 Index라는 표현을 쓴다.) 
+
+        => family에 있는 key를 하나 하나 꺼내서 { }에 있는 코드를 실행해주는 명령이 "for"다.
+            데이터들이 있는 수만큼 꺼내서 실행이 되고, 실행이 될 때마다, family의 있는 key값들,
+            하나 하나 변수값으로 세팅을 해준다.
+        for(var key in family){
+            document.write(key+'<br>');
+        }
+        => me
+        => brother
+        => mother
+        => maternal grandfather
+        
+        family["maternal grandfather"] = "grandpapa";
+        document.write("maternal grandfather : "+family["maternal grandfather"]+"<br>");
+        => family에 있는 어떤 특정한 데이터를 가져올 때, 배열의 형식을 사용해서 index가 들어가는 곳에 key값을 넣었더니, 데이터를 가져올 수 있었다. 
+            => index가 들어가는 곳에 key값을 넣었더니, = family["maternal grandfather"]
+
+        for(var key in family){
+            document.write(family[key]+'<br>');
+        }
+        =>  family라는 객체에 [key]를 해주면 -> family[key]
+            첫번째 순환 할 때에는 family[key]값으로 "me"가 들어오고, 
+            두번째 때에는 "brother", 세번째 때에는 "moter", 네번째 때에는 "maternal grandfather"이 들어온다. 
+            물론 순서는 다를 수 있다. 객체는 순서를 보장하지 않는다. 
+        => byju 
+        => kiuk 
+        => mom 
+        => grandpapa 
+
+        이점에 착안해서, 
+        for(var key in family){
+            document.write(key+' : '+family[key]+'<br>');
+        }
+        => me : byju
+        => brother : kiuk
+        => mother : mom
+        => maternal grandfather : grandpapa
+        
+        위의 Create랑 똑같은 결과를 얻을 수 있으면서 모든 데이터를 순회하면서 우리가 필요한 데이터가 있는지 없는지,
+        그것을 확인 할 수 있는 기능이다. 
+    -->
+
+</body>
+</html>

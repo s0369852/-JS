@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>35. 라이브러리와 프레임워크</title>
+
+    <!--  
+        오늘날 소프트 웨어를 만든다고 하면 혼자서 만드는 경우는 없다. 
+        누군가가 만든 소프트웨어 위에서 동작하고 있는 소프트웨어를 만들고 있다.
+        => 웹 브라우저 같은 것.
+        
+        다른 사람이 만든 소프트웨어를 부품으로,
+        소비를 해서, 내가 만들고 있는 소프트웨어에 생산자가 되는 방법. 
+
+        라이브러리 VS 프레임워크 
+        => 공통점 : 다른 사람의 도움을 받아서 소프트웨어를 만든다.
+                    다른 사람과 협력하는 모델이다. 
+        두가지를 같게 봐도 무방한데, 뉘앙스가 좀 다르다. 
+
+        라이브러리
+        => 무언가가 정리정돈이 되어있다.
+            내가 만들고자 하는 프로그램에 필요한 부품들이 되는 소프트웨어들을 재사용하기 쉽도록 되어 있는 소프트웨어. 
+            내가 만들고있는 프로그램에 사용하는 부품을 가져오는 느낌. 
+            소프트웨어를 만드는 내가 라이브러리를 당겨와서 사용하는 느낌.
+            
+        프레임워크
+        => 우리가 만들고자 하는 것이 있을때, 
+            만들고자 하는 것이 무엇이냐에 따라서(게임, 웹, 앱, 채팅 등)
+            그것을 만들려고 할때 언제나 필요한 공통정인 것이 있고, 만들고자 하는 기획의도에 따라서 달라지는 부분도 있다. 
+            공통적인 부분은 프레임워크라고 하는 것이 만들어 놓고, 만들고자 하는 것의 기능에 따라서 개성에 따라서, 달라지는 부분을
+            살짝 살짝 수정하는 것을 통해서 우리가 만들고자 하는 것을 처음부터 끝까지 만들지 않도록 하는 것. 
+            거의 완제품과 같은 것이 프레임워크라 부를 수 있다. 
+            프레임워크 안에 들어가서 작업을 하는 느낌. 
+
+        JavaScript의 라이브러리 중 가장 유명한 것은 jQuery. 
+
+        jQuery는 상당히 오래됐고, 안정적인 라이브러리. 
+        jQuery를 사용하면, 이것을 사용하지 않고 직접 코딩했던 것보다 생산성이 훨씬 더 높아진다.
+        JS를 잘 알고 있어야 jquery를 사용할 수 있다. 
+
+        직접 다운을 받아서 사용을 해도 되고, 
+        좀 더 편리한 방법은 CDN(Content Delivery Network)
+        
+        직접 라이브러리를 다운을 받아서 자기 프로젝트에 포함시키고, 업로드하고, 서비스하려면 돈이 들고 복잡한데, 
+        많은 라이브러리들이 CDN이라는 것을 통해서 자기네들 서버에다가 파일을 보관해 놓고 그것을 script src속성을 통해서, 
+        가져올 수 있도록 하는 방식이다.
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        script태그에 src를 통해서 구글에서 제공하는 jQuery라이브러리의 주소가 적혀있다. 
+        이것으로 끝이다. 다운을 받거나 할 필요가 없다. 
+
+    -->
+
+    
+
+    <link rel="shortcut icon" href="#">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/color.js"></script>
+
+</head>
+<body>
+
+    <h1><a href="#">WEB</a></h1>
+    
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+</body>
+</html>

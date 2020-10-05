@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25. 함수 이론 </title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <!--  
+        함수 = function
+        나중에 객체(object)를 배우면 똑같은 건데 메서드(method)라고도 한다. 
+    -->
+
+    <h1>Function</h1>
+    
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>')
+                document.write('<li>2-2</li>')
+            }
+            document.write('<li>1</li>')
+            two();
+            document.write('<li>3</li>')
+            two();
+        </script>
+    </ul>
+    <!-- 
+        document.write('<li>1</li>')
+        document.write('<li>2-1</li>')
+        document.write('<li>2-2</li>')
+        document.write('<li>2-1</li>')
+        document.write('<li>2-2</li>')
+        document.write('<li>3</li>')
+
+        코딩을 하다보면 특정 코드가 반복되어야 하는 경우가 있을 수 있다. 
+        => 이런 경우라면 반복문으로 처리를 하려고 할 것이다. 
+            그런데 반복문으로 사용할 수가 없는 경우가 있을 수 있다. 
+            ex.)    document.write('<li>1</li>')
+                    document.write('<li>2-1</li>')
+                    document.write('<li>2-2</li>')
+                    document.write('<li>3</li>')
+                    document.write('<li>2-1</li>')
+                    document.write('<li>2-2</li>')
+            연속적이지 않을 경우가 바로 그 경우다. 반복문을 사용하는 것이 어렵거나, 불가능해진다.
+            이럴 때 필요한 것은 반복문이 아니라 바로 함수(function). 
+        
+        웹브라우저에게 함수를 만들 것이라는 것을 알려주기 위해 function이라는 키워드를 입력한다.
+        two 라고 함수의 이름을 붙여준다. ( ){ }도 같이 붙여준다.
+        => function two(){
+                document.write('<li>2-1</li>')
+                document.write('<li>2-2</li>')
+            }
+            { }안에는 반복되고 있는, 재사용하고 싶은 코드를 붙여넣는다.
+            그런 다음 반복되는 코드를 함수로 대체해 준다. 
+            실행결과는 이전과 똑같이 나오지만, 내부적으로는 완전히 다른 메커니즘이 되었다. 
+        => 웹브라우저는 코드를 보면 function을 보고 난 다음에, {}를 본 다음에 two라는 함수를 만들려고 하는거 구나, 
+            그리고 그 함수의 내용은 { }안에 있는 코드구나 라는 것을 생각하고 기억하는 것이다. 
+            기억을 하고 있다가, two라고 하는게 나오면 여기까지는 뭐하려고 하는지 모른다.
+            그런데 '(' 열리고 ')'닫히면, 라고 하는 것을 보면 함수는, 아 two는 two라는 함수의 이름이었고,
+            two라는 함수를 실행하고 싶어한다라는 것을 알게 된다. 
+            그러면 two()자리에 함수의 코드들이 마치 원래 two()자리에 있었던 것처럼 실행을 하게 된다.       
+    -->
+
+    <h2>Parameter & Argument</h2>
+    <h2>Return</h2>
+
+</body>
+</html>

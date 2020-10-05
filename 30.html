@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30. 객체 쓰기와 읽기</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <script>
+        function LinksSetColor(color){
+            var links = document.querySelectorAll('a');
+            var i = 0;
+            while(i < links.length){
+                links[i].style.color = color;
+                i = i + 1;
+            }
+        }
+        function BodySetColor(color){
+            document.querySelector('body').style.color = color;
+        }
+        function BodySetBackgroundColor(color){
+            document.querySelector('body').style.backgroundColor = color;
+        }
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+                BodySetBackgroundColor('black');
+                BodySetColor('white');
+                self.value = 'day';
+
+                LinksSetColor('powderblue');
+            } else {
+                BodySetBackgroundColor('white');
+                BodySetColor('black');
+                self.value = 'night';
+
+                LinksSetColor('blue');
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1>Object</h1>
+    <!--  
+        정보의 양이 많아 졌을때, 서로 연관된 정보를 정리정돈 하기 위한 도구 = 배열(Array)
+        배열이란 도구는 순서에 따라서 정보를 정리정돈 한다는 특징이 있다. 
+        배열은 정보를 담는 '그릇'이면서 동시에 정보가 순서대로 저장이 된다는 특징이 있다. 
+        
+        순서대로 정보가 저장될 수 있는 것이 있다면,
+        순서없이 정보를 저장 할 수 있는 것이 있을까?
+        => 객체(Object)
+
+        그런데, 객체라는 것에 데이터를 무작위로 집어넣으면 될 까? 
+        => 그건 아니다. 
+
+        데이터를 꺼낼 필요가 있다면, 수납상자에 넣으면서 물건이나, 사물에 대한 이름을 부여한다. 
+        그 이름으로 꺼낼 수 있게 된다. 
+        객체가 바로 이름이 있는 정리정돈 상자다. 
+    -->
+    <h2>Create</h2>
+    <script>
+        // 객체를 만드는 방법
+        var family = {
+            "me":"byju",
+            "brother":"kiuk",
+        };
+        // 객체를 만들때 사용하는 기호(object literal) = { } = 중괄호
+        // 배열을 만들때 사용하는 기호(object literal) = [ ] = 대괄호
+        // family라는 객체에 "byju"라는 정보를 "me"라는 짝지를 붙여서 저장을 한 것이고, 
+        // "kiuk"이라는 정보를 "brother"이라는 짝지를 붙여서 저장을 한 것이다. 
+
+        // 만들어진 객체를 가져오는 방법
+        document.write('me : '+family.me+'<br>');
+        // 정보를 꺼내올 때에는 document.write('me : '+family.me);
+        // 이렇게 하면 family.me의 .은 "Object Access Operator"라고 불린다. 
+        // 즉, family라는 객체에 access(접근)하는 operator
+        document.write('brother : '+family.brother+'<br>');
+
+        // 만들어진 객체에 정보를 추가하는 방법
+        family.mother = "mom";
+        document.write('mother : '+family.mother+'<br>');
+
+        // 입력하려는 정보에 공백이 들어갈때에는 어떻게 할수 있을까?
+        family["maternal grandfather"] = "grandpapa";
+        document.write("maternal grandfather : "+family["maternal grandfather"]+"<br>");
+        // family라는 변수에 [] 대괄호를 사용한다. 
+        // []안에다가 ["문자"]를 쓰고 = "papa"; -> 똑같은 효과를 가져올 수 있다. 
+        // 이렇게 하면 공백. 즉, 정보에 띄어쓰기가 가능하다. 
+        // 가져올 때에도 추가할때와 마찬가지로 띄어쓰기가 들어있기 때문에 .을 쓸 수 없어서 family["grand father"] 이렇게 가져온다. 
+
+
+    </script>
+
+</body>
+</html>

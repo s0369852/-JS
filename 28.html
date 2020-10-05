@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28. 함수의 활용</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'powderblue';
+                    i = i + 1;
+                }
+
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'blue';
+                    i = i + 1;
+                }
+            }
+        }
+    </script>
+
+    <!--  
+        힘수를 이용해 코드를 효율적으로 바꾸는 작업 = 리팩토링
+        리팩토링의 굉장히 중요한 대상(수단)중에 하나가 바로 함수. 
+
+        function nightDayHandler(){
+            var target = document.querySelector('body');
+            if(this.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                this.value = 'day'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'powderblue';
+                    i = i + 1;
+                }
+
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                this.value = 'night'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'blue';
+                    i = i + 1;
+                }
+            }
+        }
+
+        <input type="button" value="night" onclick="
+        nightDayHandler();
+        ">
+        => 버튼을 클릭하면 night와 day라는 글자가 바껴야 하는데 바뀌지 않는 상태이다. 
+            이유는 this라고 하는 값은 onclick이라는 이벤트 안에서 this는 이 이벤트가 소속되어 있는 이 태그를, 
+            가르키도록 약속이 되어 있데, 독립된 함수 nightDayHandler로 만들게 되면, this는 더이상 input버튼이 아니게 되고, 전역 개체를 가르키게된다. 웹브라우저에선 window를 가르키게 된다.
+            this의 값을 input태그를 가르키게 하기 위해서 nightDayHandler라는 것이 실행 될 때, this값을 준다. 
+            => <input type="button" value="night" onclick="
+                nightDayHandler(this);
+                ">
+            그럼 이 this값은 nightDayHandler가 실행 될 때, 매개 변수를 지정해주고 (self라고 지었다.),
+            =>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'powderblue';
+                    i = i + 1;
+                }
+
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'blue';
+                    i = i + 1;
+                }
+            }
+        }
+            this를 self로 바꿔준다. 
+            그리고 실행해보면 잘 동작하는 것을 볼 수 있다. 
+            이렇게 되면 버튼이 많이 생간다고 해도, 각각의 버튼들은 알아서 잘 동작하는 버튼이 된 상태이고,
+            코드도 줄었고, 코드의 이름을 보고 기능이 무엇인지 예측이 가능하며, nightDayHandler의 함수의 내용을 바꾸면,
+            이것을 실행하고 있는 많은 사용처에서 개선되는 효과가 나온다. 
+
+        
+    -->
+
+</head>
+<body>
+
+    <h1><a href="#">WEB</a></h1>
+    
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <input type="button" value="night" onclick="
+        nightDayHandler(this);
+    ">
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day'
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night'
+    }
+    ">
+
+</body>
+</html>

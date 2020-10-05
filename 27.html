@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>27. 함수 : 리턴</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <h1>Function</h1>
+    
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>')
+                document.write('<li>2-2</li>')
+            }
+            document.write('<li>1</li>')
+            two();
+            document.write('<li>3</li>')
+            two();
+        </script>
+    </ul>
+    
+    <h2>Parameter & Argument</h2>
+    <script>
+        function onePlusOne(){
+            document.write(1+1+'<br>');
+        }
+        onePlusOne();
+        function sum(left, right){
+            document.write(left+right+'<br>');
+        }
+        function sumColorRed(left, right){
+            document.write('<div style="color:red">'+left+right+'</div>');
+        }
+        sum(2,3); // 5
+        sumColorRed(2,3); // 5
+        sum(3,4); // 7
+
+    </script>
+
+    <h2>Return</h2>
+    <script>
+        function sum2(left, right){
+            return left+right;
+        }
+        document.write(sum2(2,3)+'<br>')
+        document.write('<div style="color:red;">'+sum2(2,3)+'</div>')  
+        document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>')  
+    </script>
+    <!--  
+        함수는 입력과 출력이라는 것으로 이루어져 있다. 
+
+        표현식(expression)
+        1+1 => 2
+        1+1은 숫자 2에 대한 표현식.
+        2-1 => 1
+        2-1도 숫자 1에 대한 표현식. 
+        1===1 => true
+        1===1이 같은가? 좌항과 우항이 같은가라는 것은 true라고 하는 값에 대한 표현식.
+        
+        무엇을 하고 싶은가? 
+        sum(2,3) => 5
+        5가 되는 표현식으로 만들고 싶다. 
+        => Return이라는 것을 알아야 한다.
+
+        sum(2,3)을 실행한 결과의 값을 돌려준다면? 
+        => return
+        계산이라고 하는 기능 만을 sum2가 구현함으로써 저 원자화된 기능은 다양한 맥락에서 활용할 수 있는 자유도가 생긴다. 
+        function sum2(left, right){
+            return left+right;
+        }
+        => sum2라는 것은 일단 함수라는 것을 우리에게 알려주고 있고, left,right라는 매개 변수를 통해 들어간 값을,
+        return을 통해 출력을 함으로써, 다양한 용도로 함수를 활용할 수 있게 된다. 
+        document.write(sum2(2,3)+'<br>') // 5
+        document.write('<div style="color:red;">'+sum2(2,3)+'</div>') // 붉은 글씨의 5  
+        document.write('<div style="font-size:3rem;">'+sum2(2,3)+'</div>') // 폰트 크기가 3rem의 5
+    -->
+
+</body>
+</html>

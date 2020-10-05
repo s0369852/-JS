@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>26. 함수 : 매개변수와 인자</title>
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <h1>Function</h1>
+    
+    <h2>Basic</h2>
+    <ul>
+        <script>
+            function two(){
+                document.write('<li>2-1</li>')
+                document.write('<li>2-2</li>')
+            }
+            document.write('<li>1</li>')
+            two();
+            document.write('<li>3</li>')
+            two();
+        </script>
+    </ul>
+    
+    <h2>Parameter & Argument</h2>
+    <script>
+        function onePlusOne(){
+            document.write(1+1+'<br>');
+        }
+        onePlusOne();
+        function sum(left, right){
+            document.write(left+right+'<br>');
+        }
+        sum(2,3); // 5
+        sum(3,4); // 7
+
+    </script>
+    
+    <!-- 
+        여태껏 바왔던 함수는 어떤 형태의 함수였냐면 비유적으로,
+        자판기에 제품이 하나 밖에 없어서, 언제나 똑같은 제품을 받을 수 있는 자판기다. 
+        자판기가 충분히 편리함을 주지만, 아쉬운 것도 많다. 
+        어떤게 아쉽냐면?
+        원하는 제품을 선택을 하면 자판기가 그 제품에 해당되는 구체적인 제품을 우리에게 제공해주는 자판기라면 훨씬 더 효용이 있을 것이다. 
+        우리가 제품을 선택하는 것을 말하자면 '입력'이라고 할 수 있고,
+        자판기가 그 '입력'에 대해서 해당되는 제품을 제공하는 것을 '출력'이라고 할 수 있다. 
+        '입력'과 '출력'에 해당되는 것이 수학적으로는 함수라고 하는 것이 존재. 
+
+        프로그래밍의 함수를 살펴보면서 함수가 어떤 효용이 있는지, 어떻게 문법적으로 되어 있는지 살펴보자. 
+        
+        함수는 '입력'과 '출력'으로 이루어져 있다. 
+        '입력' = Parameter(매개변수) & Argument(인자)
+        '출력' = Return
+
+        <script>
+            function onePlusOne(){
+                document.write(1+1);
+            }
+            onePlusOne();
+        </script>
+
+        onePlusOne(); 이라는 함수는 언제나 똑같이 동작을 하는 함수이다. 
+        이 함수를 실행할때 우리가 어떤 입력값을 주면 함수가 그 입력값에 따라서 다른 결과를 출력하게 한다면?
+        sum(2,3); // 5
+        sum(3,4); // 7
+        => 이 코드가 단순한 더하기가 아니라 정말 복잡한 코드라면? 
+            sum이라고 하는 단 하나의 함수로 입력값이 무엇이냐에 따라서 다른 결과를 화면에 출력할 수 있게 된다면?
+        
+        function sum(left, right){
+            document.write();
+        }
+        sum(2,3); // 5
+        sum(3,4); // 7
+        => sum이라는 함수를 만들고 2라고 하는 값은 left라고 하고, 3이라고 하는 값은 right라고 하는 변수를 정의한다. 
+            이 변수를 바로 매개하는 변수라고 하고 Parameter라고 한다. 
+            sum(2,3); 이 코드를 실행한다면 이제 left의 값은 이제 2가 되기로 약속이 되어 있고, right의 값은 3이 되도록 약속이 되어있다. 
+            function sum(left, right){
+                document.write(left+right+'<br>'); // '<br>'태그는 줄바꿈을 위해 넣어준 것.
+            }
+            sum(2,3);
+            sum(3,4);
+            => 5
+            => 7
+
+        sum이라는 함수에 2라는 값과 3이라는 값을 입력해주는 것을 통해서 5라는 결과를 화면에 출력 받을 수 있다. 
+        함수로 전달하는 2와 3이라는 값을 '인자(Argument)'라고 한다.
+        그리고 이 값을 받아서 함수 안으로 매개해 주는 변수 들을 (left와 right같은) '매개 변수(Parameter)'라고 한다. 
+        
+        '매개 변수(Parameter)' 와 '인자(Argument)'는 함수로 들어오는 입력값과 관련된 것이라고 생각하면 된다. 
+    -->
+    <h2>Return</h2>
+
+</body>
+</html>

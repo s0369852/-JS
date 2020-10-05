@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24. 함수 예고</title>
+
+    <link rel="shortcut icon" href="#">
+
+    <script>
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+                target.style.backgroundColor = 'black';
+                target.style.color = 'white';
+                self.value = 'day'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'powderblue';
+                    i = i + 1;
+                }
+
+            } else {
+                target.style.backgroundColor = 'white';
+                target.style.color = 'black';
+                self.value = 'night'
+
+                var links = document.querySelectorAll('a');
+                var i = 0;
+                while(i < links.length){
+                    links[i].style.color = 'blue';
+                    i = i + 1;
+                }
+            }
+        }
+    </script>
+
+</head>
+<body>
+
+    <h1><a href="#">WEB</a></h1>
+    
+    <input type="button" value="night" onclick="
+        nightDayHandler(this)
+    ">
+
+    <input type="button" value="night" onclick="
+        nightDayHandler(this)
+    ">
+
+    <!--  
+        함수 = function
+        함수하면 떠오르는 이미지는 수납상자. 
+        코드가 많아지면 코드를 잘 정리정돈 하기 위한 도구들이 필요하다. 
+        첫번째로 생각 할 만한 도구가 강력하면서도 간단한 함수(function)다. 
+        좀 더 큰 도구는 객체(object)라는 것이 있다.
+
+        어느 시점 부터는 코드가 같은지 눈으로 확인하는 것이 굉장히 힘들어지고, 사람이 확인하는게 사실상 불가능해진다.
+        코드의 양 또한 엄청나게 많아 지는데, 이렇게 되면 웹페이지의 크기가 커지고, 커진다는 것은 인터넷을 통해 전송할 때,
+        그만큼 비용과 시간과 노력이 들어가게 된다는 것이다. 
+        => 이런 상황에서 도움을 얻을 수 있는 도구가 바로 함수. 
+
+        1. input태그 안의 onclick이라는 property에 JS코드를 넣어줬던 것을 빼내어서
+            <input type="button" value="night" onclick="
+
+            ">
+        
+        2. Script태그를 만들어 그안에 넣고, 넣은 코드에다가 nightDayHandler라는 이름을 붙여줬다. 
+            <script>
+                nightDayHandler(){
+                    var target = document.querySelector('body');
+                    if(this.value === 'night'){
+                        target.style.backgroundColor = 'black';
+                        target.style.color = 'white';
+                        this.value = 'day'
+
+                        var links = document.querySelectorAll('a');
+                        var i = 0;
+                        while(i < links.length){
+                            links[i].style.color = 'powderblue';
+                            i = i + 1;
+                        }
+
+                    } else {
+                        target.style.backgroundColor = 'white';
+                        target.style.color = 'black';
+                        this.value = 'night'
+
+                        var links = document.querySelectorAll('a');
+                        var i = 0;
+                        while(i < links.length){
+                            links[i].style.color = 'blue';
+                            i = i + 1;
+                        }
+                    }
+                }
+            </script>
+
+        3. 코드의 이름을 nightDayHandler라고 지정하고 싶은 것이고, 이러한 문법을 함수라고 한다. 
+            웹브라우저에게 "나는 함수를 만들고 싶다."라는 뜻에서 function이라는 키워드를 붙여준다. 
+            self라고 넣어주고, this라는 부분을 다 self로 바꾼다. (왜 그런지는 아직 모름. 일단 무시)
+            <script>
+                function nightDayHandler(self){
+                    var target = document.querySelector('body');
+                    if(self.value === 'night'){
+                        target.style.backgroundColor = 'black';
+                        target.style.color = 'white';
+                        self.value = 'day'
+
+                        var links = document.querySelectorAll('a');
+                        var i = 0;
+                        while(i < links.length){
+                            links[i].style.color = 'powderblue';
+                            i = i + 1;
+                        }
+
+                    } else {
+                        target.style.backgroundColor = 'white';
+                        target.style.color = 'black';
+                        self.value = 'night'
+
+                        var links = document.querySelectorAll('a');
+                        var i = 0;
+                        while(i < links.length){
+                            links[i].style.color = 'blue';
+                            i = i + 1;
+                        }
+                    }
+                }
+            </script>
+
+        4. 이제 nightDayHandler라는 이름을 갖고 있는 로직을 실행시키고 싶을 때, 어떻게 하면 되는가?
+        <input type="button" value="night" onclick="
+            nightDayHandler(this)
+        ">
+        => onclick="nightDayHandler(this)" / 원래 JS코드가 들어있던 자리에 들어있던 JS코드로 만든 함수 nightDayHandler를 넣어주면 된다.
+            ((this) => ()안에 this가 왜 들어가는지는 아직 모름. 일단은 무시)
+        => 이렇게 되면 nightDayHandler라는 함수를 실행시켜라 라는 뜻을 가지게 된다. 그리고 실제 내용은 복사해서 붙여넣은 원래 코드의 내용이다.
+        
+        5. 이전의 코드가 장황했던 때와 똑같이 동작하지만, 내부적으로는 완전히 다른 효율성을 갖는 코드가 된 것이다.
+        
+        6. 왜 그런지 살펴보면. 
+        => powderblue라는 색을 다른 색으로 바꾸면 nightDayHandler라고 하는 함수를 사용하는 곳의 사용처의 color가 동시에 바뀌게 된다.
+        => 유지보수가 엄청 쉬워진다. 
+        => nightDayHandler를 만들기 전의 코드가 만약 1억 줄이고, 1억 번 반복된다면, nightDayHandler라는 함수를 불러오는 것으로 한줄로 대체가 된다면, 
+            웹 페이지의 크기가 극단적으로 줄어들 수 있다.
+            nightDayHandler가 들어있는 곳이라면, 똑같은 로직을 갖고 있다는 것을 확신할 수 있게 된다.
+        => 어떤 로직인지에 대한 이름이 붙어있기 때문에, 코드들의 정체를 분명하게 이해할 수 있게 된다.
+
+    -->
+
+    <ol>
+        <li><a href="#">HTML</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">JavaScript</a></li>
+    </ol>
+
+    <h2>JavaScript</h2>
+    <p>
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry."+name+" Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries,"+name+" but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing"+name+" Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </p>
+
+    <input type="button" value="night" onclick="
+    var target = document.querySelector('body');
+    if(this.value === 'night'){
+        target.style.backgroundColor = 'black';
+        target.style.color = 'white';
+        this.value = 'day'
+    } else {
+        target.style.backgroundColor = 'white';
+        target.style.color = 'black';
+        this.value = 'night'
+    }
+    ">
+
+</body>
+</html>

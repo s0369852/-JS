@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>36. JavaScript UI vs API</title>
+
+    <!--  
+        UI vs API
+
+        UI : User Interface
+
+
+        API : Application Programing Interface
+
+
+    -->
+
+    <link rel="shortcut icon" href="#">
+
+</head>
+<body>
+
+    <input type="button" value="Click me" onclick="alert('Hello World')">
+    <!--  
+        이 버튼은 누가 사용을 하고 있는가? 
+        웹 앱을 이용하려고 하는 사용자가 이런 버튼과 같은 조작장치를 이용해서,
+        웹 애플리케이션을 사용하고 있는 것이다. 
+        => 사용자가 시스템을 제어하기 위해서 사용하는 조작장치를 UI(User Interface)라고 한다.
+
+        이번엔 우리가 만든 웹 애플리케이션의 코드를 살펴보자. 
+        경고창은 우리가 만든 것일까? 아닐까? 
+        => 우리가 만들기도, 만들지 않기도. 
+        => 경고창이 실행되는 타이밍이나, 표시된 내용의 텍스트는 우리의 의도가 반영된 것이기 때문에,
+            우리가 만들었다고 할 수도 있다. 
+            하지만, 코드 -> <input type="button" value="Click me" onclick="alert('Hello World')">에는
+            이 경고창의 기능이나, 모양은 일체 설명이 되어 있지 않다. 
+            그러면, 이 경고창은 어떻게 만들어졌을까?
+            그것은 웹 브라우저를 만드는 사람들이 우리 대신에, 경고창에 대한 기능을 미리 만들어 두었다가,
+            alert이라는 함수를 실행하게 되면 경고창을 띄워주겠다고 javascript에 사용설명서를 통해 약속을 한것. 
+            그럼 우리는 그 약속을 믿고, alert이라는 함수를 호출해서 경고창을 켤 수 있도록 한것. 
+            함수 alert은 경고창을 실행하는 조작장치인 것이다. 
+            이런 조작장치를 일반인이 사용하지는 않는다. (코딩을 할 줄 모른다는 일반인)
+            우리가 만들고있는 버튼을 클릭하면 경고창이 뜨는 웹 애플리케이션이,
+            웹브라우저가 가지고 있는 경고창 기능을 alert이라고 하는 javascript라는 문법에 따라서, 
+            그 문법에 코드를 이용해서 사용하고 있는 것이다. 
+            이렇게 애플리케이션을 만들기 위해서 프로그래밍을 할 때 사용하는 조작장치들을 
+            => API (Application Programing Interface)
+            alert이라는 것이 즉, API인 것이다.
+            이것은 javascript에 국한된 얘기가 아니고, 모든 프로그래밍언어에 공통적으로 적용되는 이야기.
+            모든 애플리케이션들은 API를 프로그래밍적으로(순서대로) 실행하는 것을 통해서 만들어 진다. 
+            API가 없다면 순서가 무슨 소용이겠는가? 순서가 없다면 API가 무슨 소용이겠는가? 
+            API와 순서는 단어와 문법처럼, 부품과 부품의 결합방법처럼 뗄래야 뗼수 없는 관계. 
+
+        프로그래머가 되기 전까지 UI만 사용했다면, 
+        API도 사용하는 프로그래머가 된 것이다. 
+
+        javascript라는 접착제로 API를 결합(=응용)해서 누구도 만들어보지 않은 응용프로그램을 만들 수 있게 된 것이다. 
+    -->
+
+</body>
+</html>

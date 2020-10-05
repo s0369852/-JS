@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32. 객체프로퍼티와 메소드</title>
+
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+
+    <h1>Object</h1>
+    
+    <h2>Create</h2>
+    <script>
+        var family = {
+            "me":"byju",
+            "brother":"kiuk",
+        };
+        document.write('me : '+family.me+'<br>');
+        document.write('brother : '+family.brother+'<br>');
+        family.mother = "mom";
+        document.write('mother : '+family.mother+'<br>');
+        family["maternal grandfather"] = "grandpapa";
+        document.write("maternal grandfather : "+family["maternal grandfather"]+"<br>");
+    </script>
+    
+    <!-- 객체의 데이터를 순회하는 방법. -->
+    <h2>Iterate</h2>
+    <script>
+        for(var key in family){
+            document.write(key+' : '+family[key]+'<br>');
+        }
+    </script>
+
+    <h2>Property & Method</h2>
+    <script>
+        family.showAll = function(){
+            for(var key in family){
+                document.write(key+' : '+this[key]+'<br>')
+            };
+        };
+        family.showAll();
+    </script>
+
+    <!--  
+        객체에는 어떤 데이터를 담을 수 있다. 지금은 'byju', 'kiuk' 등의 문자를 담았지만, 배열을 담을 수도 있다.
+        또 숫자를 담을 수도 있고, 다 담을 수 있다. 
+        그 중에 하나, 객체에는 함수도 담을 수 있다. 
+        
+        "family.showAll = function(){};" = "function showAll(){};" = "var showAll = function(){};"
+        함수를 정의 하는 다 같은 표현이다. 
+
+        showAll이라고 하면 family에 있는 각각의 데이터 들을 iterate(순환하다.)해서 화면에 출력하는 코드를 넣은 것이다.
+        =>
+        family.showAll = function(){
+            for(var key in family){
+                document.write(key+' : '+family[key]+'<br>')
+            };
+        };
+        => me : byju
+        => brother : kiuk
+        => mother : mom
+        => maternal grandfather : grandpapa
+        => showAll : function(){ for(var key in family){ document.write(key+' : '+family[key]+'
+            ') }; }
+
+        document.write(key+' : '+family[key]+'<br>') -> 이게 좋은 방법은 아니다. 
+        왜냐하면 var family라는 이름이 family[key]에 박혀있기 때문에, 만약에 객체의 이름이 바뀌었다면, 
+        데이터를 가져오지 못하는 현상이 생길 수 있다. 
+        그런 경우에는 어떻게 하면 되는가?
+
+        showAll이라고 하는 함수 안에서 이 함수가 소속되어있는 객체를 가르키는 약속된 기호가 있는데, 
+        바로 this이다.
+
+        document.write(key+' : '+this[key]+'<br>') -> 객체이름을 this로 바꿔주면 된다. 
+        => 똑같은 결과를 낼 수 있고, 객체이름이 바뀐다고 해도 this는 자기 자신을 가르키기 때문에 영향을 미치지 않는다. 
+        => 좀 더 아쉬운 부분은 showAll조차도 family에 소속된 데이터 이기 때문에 -> family.showAll = function(){};
+            showAll : function(){ for(var key in family){ document.write(key+' : '+family[key]+'
+            ') }; }
+            화면에 표시가 되었다. 
+
+            이를 해결하기 위해서는 for문 안에서 if문으로 showAll을 제외한다라는 코딩을 해야 한다. 
+            (나중에 좀 더 배워서 만들어보자.)
+
+        여기서 중요한 것은 객체에 소속된 변수의 값으로 함수를 지정할 수 있고, 그렇게 되면 객체의 소속된 함수를 만들 수 있다. 
+        객체에 소속된 함수를 바로 "메서드(Method)"라고 하고, 
+        객체에 소속된 변수 이를테면 "me", "brother"과 같은 것들을 "프로퍼티(Property)"라고 한다. 
+
+        맥락적으로 같은 것을 부르는 표현들이 조금 다르다. 
+
+
+
+    -->
+    
+
+</body>
+</html>
