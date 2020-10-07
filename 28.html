@@ -73,8 +73,8 @@
         nightDayHandler();
         ">
         => 버튼을 클릭하면 night와 day라는 글자가 바껴야 하는데 바뀌지 않는 상태이다. 
-            이유는 this라고 하는 값은 onclick이라는 이벤트 안에서 this는 이 이벤트가 소속되어 있는 이 태그를, 
-            가르키도록 약속이 되어 있데, 독립된 함수 nightDayHandler로 만들게 되면, this는 더이상 input버튼이 아니게 되고, 전역 개체를 가르키게된다. 웹브라우저에선 window를 가르키게 된다.
+            이유는 this라고 하는 값은 onclick이라는 이벤트 안에서 이 이벤트가 소속되어 있는 이 태그를, 
+            가르키도록 약속이 되어 있는데, 독립된 함수 nightDayHandler로 만들게 되면, this는 더이상 input버튼이 아니게 되고, 전역 개체를 가르키게된다. 웹브라우저에선 window를 가르키게 된다.
             this의 값을 input태그를 가르키게 하기 위해서 nightDayHandler라는 것이 실행 될 때, this값을 준다. 
             => <input type="button" value="night" onclick="
                 nightDayHandler(this);
